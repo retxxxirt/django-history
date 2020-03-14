@@ -1,0 +1,14 @@
+language: python
+python:
+  - '3.8'
+install:
+  - pip install -e .[test]
+script:
+  - python tests/manage.py test tests
+deploy:
+  provider: pypi
+  user: "__token__"
+  password:
+    secure: "Xie3+uOFXNlcq2Y9TrHylW5euPylGioSi6pMJ/MQflHBDH0hyHdaUfFZbUz4ikvVr1ZmmOPBB1HnfbAZxFerynXCNBIY+5A8nZWFIMT5fSt6ST3WVuuTBwxAY0sY2IFbZebQ3APbHSq5JDXmqwR9/RGw+dBocuDXBW75icICRe+zDCgLzMiqPsftQ7khKWlq0btuT/tJLrpuSeLVdFG7fc4ll8tKSZdoPHmvRcir8rZ1MtuHZPrGQu5gSDPpaocie+Gsoj4tphCvlqPBXLl5yvcUYJgWgNEmjY8jumIcUvtqk7P1q83/99ZDtNVlfbGDNqlqp7hgwV39G6ThldTYDXnPDSpnRXIkACF+Kyhhj3fBrUiGTS2TmyZ0HOca9HgcYJGdNEu7yoRjtPU57nJJmg970O/HSUmtkbugo+8mDR/XvlEcPAp194KQSkEXf/66EvLlKd/BrJPOrt/AF+cLi2idD/LFXQ9ShIRJv0d4ygyCNUnpYrLgwaTPqqEOEBBVZgtoeXbwWf0IgQw7afu80WcjyBSRc/Wc1L4rRokAQ52g88k4hwkYUXUo6k01+emF7DvJpdkeG7owPrCVS/MOq2yO8PxoKnkqN6j7bEJK70PjV+HNalCsLQ7Haz62iZxKXAE8r7gpwydqnLeIqNKrWTpUcJzalNXY+lwIL/RYwag="
+  on:
+    branch: production
