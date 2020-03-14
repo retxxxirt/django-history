@@ -23,8 +23,8 @@ class ModelATestCase(TestCase):
     def test_value_type(self):
         ModelA(int_field=0, str_field='').save()
 
-        for field, type in [('int_field', int), ('str_field', str), ('date_field', datetime)]:
-            self.assertIsInstance(ModelA.history.field(field).first().field_value, type)
+        for field, instance in [('int_field', int), ('str_field', str), ('date_field', datetime)]:
+            self.assertIsInstance(ModelA.history.field(field).first().field_value, instance)
 
     def test_field_filter(self):
         (model := ModelA(int_field=0, str_field='')).save()
