@@ -13,5 +13,6 @@ setup(
     author_email='retxxirt@gmail.com',
     url='https://github.com/retxxxirt/django-history',
     keywords=['django history', 'django', 'django history manager', 'django history model', 'django history field'],
-    tests_require=['django==3.0.4']
+    tests_require=(tests_require := ['django==3.0.4']),
+    extras_require={'test': tests_require}
 )
