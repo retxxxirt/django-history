@@ -4,7 +4,7 @@ setup(
     name='django-history-manager',
     packages=['django_history'],
     package_data={'django_history': ['migrations/*.py']},
-    version='0.1.0',
+    version='0.1.1',
     license='MIT',
     description='History manger for django models.',
     # long_description=open('README.md').read(),

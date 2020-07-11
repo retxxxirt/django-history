@@ -1,7 +1,6 @@
-from typing import Iterator, List, Type, Any
+from typing import Any, Iterator, List, Type
 
 from django.db.models import Field, Model, QuerySet
-
 from django_history.register import registered_managers
 
 
@@ -76,5 +75,5 @@ class HistoryManager:
         for field in self.fields_to_create:
             History.objects.create(
                 model_name=self.model._meta.db_table, instance_pk=instance_pk,
-                field_name=field.name, field_value=field.value_to_string(instance)
+                field_name=field.name, field_value=field.get_prep_value(getattr(instance, field.name))
             )
